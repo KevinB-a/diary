@@ -1,5 +1,5 @@
 class Event():
-    """"""
+    """ """
 
     def __init__(self, data):
         self.id_event = None
@@ -17,8 +17,10 @@ class Event():
                 setattr(self, key, value)
 
     def show_event(self):
-        try :
+        """ """
         return """_____________________________
-        {} : {}
-        {}
-                _____________________________""".format(self.time, self.title, self.description)
+        title : {} \n\
+        date : {} \n\
+        time : {} \n\
+        description : {} \n\
+        """.format(self.title, self.date, self.time, self.description ) 

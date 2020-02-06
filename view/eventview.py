@@ -4,9 +4,8 @@ from model.event import Event
 
 class EventView():
     """ """
-    
     def __init__(self):
-        model = eventModel()
+        model = EventModel()
         event = Event()
 
     def to_show_events(self):
@@ -24,12 +23,12 @@ class EventView():
     def new_event(self):
         """ """
         event.title = input('Titre : ')
-        event.description = input('Description (optionnelle) : ')
-        event.event_date = input('Date (jj/mm/aaaa) : ')
-        event.event_time = input('Heure (hh:mm) : ')
-        while self.model.display_one_event(event.event_date, event.event_time):
-            print("Vous avez déjà quelque chose à cette heure là !")
-            event.event_time = input('Nouvelle heure : ')
+        event.description = input('Description : ')
+        event.date = input('Date (jj/mm/aaaa) : ')
+        event.time = input('Heure (hh:mm) : ')
+        while self.model.display_one_event(event.date, event.time):
+            print("Vous avez déjà un événement à cette heure  !")
+            event.time = input('Nouvelle heure : ')
         self.model.add_event(event)
 
     def to_delete_event(self):
@@ -39,7 +38,7 @@ class EventView():
         self.model.delete_event(date, hour)
 
     def to_update_event(self):
-        """"""
+        """ """
 
         choice = ""
         while choice != "s":
@@ -56,13 +55,15 @@ class EventView():
 
             while True:
                 print(event)
-                print("Tapez s pour arrêter")
+                print("Tapez a pour arrêter")
                 attribut = input("Attribut à modifier : ")
-                if attribut == 's' : 
+                if attribut == 'a' : 
                     break
                 value = input("Nouvelle valeur : ")
 
-                if attribut == "event_time":
-                    while self.model.display_one_event(event.event_date, value):
-                        print("Vous avez déjà quelque chose à cette heure là !")
+                if attribut == "time":
+                    while self.model.display_one_event(event.date, value):
+                        print("Vous avez déjà un événement à cette heure !")
                         value = input('Nouvelle heure : ')
+
+
