@@ -1,7 +1,7 @@
 class Event():
     """ """
 
-    def __init__(self, data):
+    def __init__(self, data=False):
         self.id_event = None
         self.title = None
         self.date = None
