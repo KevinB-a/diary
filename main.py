@@ -45,10 +45,6 @@ while answer != 'q':
         view.to_delete_event()
     elif answer == "m":
         view.to_update_event()
-    else:
-        pass
-
-
 print("Merci et au revoir")
 time.sleep(3)
 exit()

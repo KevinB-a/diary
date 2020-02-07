@@ -6,10 +6,11 @@ class EventView():
     """ """
     def __init__(self):
         self.model = EventModel()
+        self.event = Event()
 
     def to_show_events(self):
         """ """
-        date = input(" : ")
+        date = input("Entrez la date des événement a afficher : ")
         events = self.model.show_events(date)
         print("\nVotre agenda du {}\n".format(date))
         if events:
@@ -20,8 +21,7 @@ class EventView():
         input("Tapez sur une touche pour continuer :")
 
     def new_event(self):
-        """ """
-        self.event = Event()
+        """ """ 
         self.event.title = input('Titre : ')
         self.event.description = input('Description : ')
         self.event.date = input('Date (jj/mm/aaaa) : ')
@@ -39,31 +39,25 @@ class EventView():
 
     def to_update_event(self):
         """ """
-
         choice = ""
         while choice != "s":
             date = input("Jour de l'événement : ")
             time = input("Heure de l'événement : ")
             event = self.model.display_one_event(date, time)
-            if event : 
+            if event :
                 break
             print("il y a rien a cette date")
             choice = input("Tapez s pour arrêter, n'importe quelle touche pour continuer")
-
         if event:
             print("Voici les informations enregistrées")
-
             while True:
                 print(event)
                 print("Tapez a pour arrêter")
                 attribut = input("Attribut à modifier : ")
-                if attribut == 'a' : 
+                if attribut == 'a' :
                     break
                 value = input("Nouvelle valeur : ")
-
                 if attribut == "time":
                     while self.model.display_one_event(event.date, value):
                         print("Vous avez déjà un événement à cette heure !")
                         value = input('Nouvelle heure : ')
-
-
