@@ -34,8 +34,8 @@ class EventView():
     def to_delete_event(self):
         """ """
         date = input("Jour de l'événement : ")
-        hour = input("Heure de l'événement : ")
-        self.model.delete_event(date, hour)
+        time = input("Heure de l'événement : ")
+        self.model.delete_event(date, time)
 
     def to_update_event(self):
         """ """

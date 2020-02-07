@@ -30,7 +30,7 @@ while answer != 'q':
             currentmonth += 1
         else:
             currentmonth = 1
-            currenyear += 1
+            currentyear += 1
     elif answer == "p":
         if currentmonth > 1:
             currentmonth -= 1

@@ -7,7 +7,6 @@ class EventModel():
 
     def __init__(self):
         # Create a instance of the connection class to acces the database
-        # Créer une instance de la classe de connexion pour accéder à la base de données
         self.db = Connection()
     
     def show_events(self, date):
@@ -21,11 +20,11 @@ class EventModel():
             events[key] = Event(value)
         return events
 
-    def display_one_event(self, date, hour ):
+    def display_one_event(self, date, time):
         """method to dislay one event  """
         sql = "SELECT * FROM events WHERE date = %s AND time = %s;"
         self.db.initialize_connection()
-        self.db.cursor.execute(sql, (date, hour))
+        self.db.cursor.execute(sql, (date, time))
         event = self.db.cursor.fetchone()
         self.db.close_connection()
         if event:
