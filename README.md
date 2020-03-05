@@ -17,3 +17,4 @@ Programme exécutable par le lancement d'un fichier main.py-
 Intégration d'une base de données PostgreSQL via la librairie Psycopg2- 
 Utilisation du module CalendarAttention n’oubliez pas de faire une arborescence fonctionnelle, un diagramme de classe et un schéma de base de données.
 Pour aller plus loin : Vous pouvez, si vous le souhaitez, rajouter des fonctionnalités à votre application comme par exemple :- Une vérification stricte des données rentrées par l'utilisateur dans les inputs (validité du format desdates, heures, absence de caractères spéciaux...)- Une gestion plus fine de l'expérience utilisateur. Par exemple que se passe-t-il l'utilisateur cherche à modifier un événement non-existant ?- Transformer votre application en agenda partagé pour plusieurs personnes avec la possibilité de créer des comptes personnels
+--------------------------------------------------------------------------------------------------------------------------
